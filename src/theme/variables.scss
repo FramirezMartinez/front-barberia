@@ -12,7 +12,7 @@
     --ion-color-danger: #eb445a;
     --ion-color-light: #f4f5f8;
     --ion-color-medium: #92949c;
-    --ion-color-dark: #222428;
+    --ion-color-dark: #1c1c1c;
   }
 
   /* Variables para definir colores */
@@ -21,11 +21,11 @@ ion-toolbar {
   }
   
   ion-header {
-    --background-color: #222428;  
+    --background-color:#1c1c1c;  
   }
   
   ion-footer{
-    background-color: #222428;
+    background-color: #1c1c1c;
   } 
   ion-button {
     --background: var(--ion-color-primary);
@@ -34,7 +34,7 @@ ion-toolbar {
   }
   
   ion-content {
-    --background: var(--ion-color-light);
+    --background: dark;
   }
   
   ion-card {
@@ -52,5 +52,6 @@ ion-toolbar {
   ion-title{
     color: white;
   }
-
-
+ion-icon{
+  --color:white;
+}

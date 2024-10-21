@@ -1,0 +1,33 @@
+<h4 id="productos">Productos</h4>
+<ion-content class="contenedor-scroll">
+  <ion-grid>
+    <ion-row>
+      <!-- Iterar sobre los productos -->
+      <ion-col size="6" size-sm="6" size-md="3" size-lg="2" *ngFor="let producto of productos">
+        <ion-card class="producto-card">
+          <img alt="{{ producto.nombre }}" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header>
+            <ion-card-title>{{ producto.nombre }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            
+            <!-- {{ producto.descripcion }}<br /> -->
+            Precio: {{ producto.precio | currency }}
+            <!-- {{ producto.disponible ? 'Disponible' : 'No disponible' }} -->
+            
+            <div class="carrito">
+              <ion-icon name="cart-outline"></ion-icon>
+              <ion-label>...</ion-label>
+            </div>          <!-- </ion-item-divider> -->
+              
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+

@@ -1,0 +1,9 @@
+
+ion-icon{
+color: white;
+}
+
+ion-segment-button.segment-button-checked ion-icon
+{
+  color: red;
+}   

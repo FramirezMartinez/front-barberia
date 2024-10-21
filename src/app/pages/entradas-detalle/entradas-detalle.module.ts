@@ -8,6 +8,7 @@ import { EntradasDetallePageRoutingModule } from './entradas-detalle-routing.mod
 
 import { EntradasDetallePage } from './entradas-detalle.page';
 import { ModuloComponentesModule } from '../../components/modulo-componentes.module';
+import { SharedModule } from 'src/app/shared/components/shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ModuloComponentesModule } from '../../components/modulo-componentes.mod
     FormsModule,
     IonicModule,
     EntradasDetallePageRoutingModule,
-    ModuloComponentesModule
+    ModuloComponentesModule,
+    SharedModule
   ],
   declarations: [EntradasDetallePage]
 })
