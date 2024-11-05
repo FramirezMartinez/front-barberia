@@ -83,3 +83,59 @@ color: #ffefb9 ;
 color: #7b9971 ;
 color: #34502b ;
 }
+
+
+// PARA EL CALENDARIO
+/* Core CSS required for Ionic components to work properly */
+@import '~@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+:root {
+
+  
+}
+
+
+
+ion-datetime {
+  --background: #000;
+  // --background-rgb: 255, 241, 242;
+
+  border-radius: 16px;
+  // box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
+}
+
+  ion-datetime .datetime-button {
+    background-color: #000;  
+    // color: #fff;  
+  
+  /* Para el encabezado del componente */
+  ion-datetime .datetime-header {
+    color: #000;  
+  }
+  
+  /* Cambiar el color del texto del toggle de mes y año */
+  calendar-month-year-toggle #toggle-wrapper {
+    color: #ffffff; /* Texto blanco */
+  }
+  :host {
+    --ion-background-color: #fff; /* Fondo negro */
+    --box-shadow: none; /* Elimina el box-shadow blanco */
+    --border-color: #fff; /* Opcional: Asegura que los bordes sean negros */
+  }
+  
+  
+  
+}

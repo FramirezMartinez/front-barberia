@@ -3,34 +3,54 @@
     <ion-buttons slot="start">
      <ion-back-button>Regresar, este texto no se ve solo el icono</ion-back-button>
     </ion-buttons>
-    <ion-title>RegistroCliente</ion-title>
+    <ion-title align="center">Crear cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Registro Cliente</ion-card-title>
+      <ion-card-title>Los campos con un <b class="requerido">*</b> son requeridos</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <form [formGroup]="formularioRegistro">
         <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
+          <ion-label position="floating">Nombre <b class="requerido">*</b></ion-label>
           <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Apellido paterno <b class="requerido">*</b></ion-label>
+          <ion-input formControlName="ApellidoPaterno"></ion-input>
+        </ion-item>
+       
+        <ion-item>
+          <ion-label position="floating">Apellido materno<b class="requerido">*</b></ion-label>
+          <ion-input formControlName="ApellidoMaterno"></ion-input>
+        </ion-item>
+       
+        <ion-item>
+          <ion-label position="floating">Correo<b class="requerido">*</b></ion-label>
+          <ion-input formControlName="correo" type="email"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Número de teléfono<b class="requerido">*</b></ion-label>
+          <ion-input formControlName="numeroTelefono" type="number"></ion-input>
         </ion-item>
     
         <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
+          <ion-label position="floating">Contraseña<b class="requerido">*</b></ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating"> Confirmar contraseña</ion-label>
+          <ion-label position="floating"> Confirmar contraseña <b class="requerido">*</b></ion-label>
           <ion-input formControlName="confirmarPassword" type="password"></ion-input>
         </ion-item>
       </form>
       <br>
-      <ion-button (click)="guardar()">
+      <ion-button id="btn-cuardar" (click)="guardar()">
         Guardar
       </ion-button>
     </ion-card-content>

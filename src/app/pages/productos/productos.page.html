@@ -1,0 +1,213 @@
+<app-header></app-header>  
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <ion-icon name="grid-outline"></ion-icon>
+  <ion-icon name="list-outline"></ion-icon>
+<div>
+  <span>Mostrar resultado 1-30</span><br><br>
+  <ion-select label="Ordenar producto" label-placement="floating" fill="outline">
+    <ion-select-option value="apple">Decendente</ion-select-option>
+    <ion-select-option value="banana">Acendente</ion-select-option>
+  </ion-select>
+</div>
+
+<!-- lista de prouctos a mostrar -->
+<!-- <app-productos-inicio></app-productos-inicio> -->
+
+<!-- carda para los productos -->
+<h4 id="productos">Productos</h4>
+<ion-content class="contenedor-scroll">
+  <ion-grid>
+    <ion-row>
+      <!-- Iterar sobre los productos -->
+      <ion-col size="6" size-sm="6" size-md="3" size-lg="2" *ngFor="let producto of productos">
+        <ion-card class="producto-card">
+          <img alt="{{ producto.nombre }}" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header>
+            <ion-card-title>{{ producto.nombre }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            
+            <!-- {{ producto.descripcion }}<br /> -->
+            Precio: {{ producto.precio | currency }}
+            <!-- {{ producto.disponible ? 'Disponible' : 'No disponible' }} -->
+            
+            <div class="carrito">
+              <ion-icon name="cart-outline"></ion-icon>
+              <ion-label>...</ion-label>
+            </div>          <!-- </ion-item-divider> -->
+              
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+  <ion-button id="open-modal" class="btn-listCompra" 
+  (touchstart)="iniciarMovimiento($event)" 
+  (touchstart)="iniciarMovimiento($event)" (touchmove)="moverElemento($event)"
+  > 
+    <ion-icon name="receipt-outline"></ion-icon>
+  </ion-button>
+
+  <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" 
+  [initialBreakpoint]="0.63"
+  [breakpoints]="[0, 0.25, 0.5, 0.95]"
+    handleBehavior="cycle" class="custom-modal">
+  
+    <ng-template>
+      <ion-content>
+        <ion-toolbar color="primary" class="modalToolbar">
+          <ion-title>Lista de compras</ion-title>
+          <ion-buttons slot="end">
+            <ion-icon name="close-outline" color="light" class="cerrarModal" (click)="modal.dismiss()"></ion-icon>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+            </ion-avatar>
+            <ion-label class="contLabel">
+              <div class="textProducto">
+                <div class="infoProducto">
+                  <h2>Talco</h2>
+                  <p>130</p>
+                </div>
+                <div class="listProducto">
+                  <ion-button (click)="decrement()"> <ion-icon class="btn-adjust"  name="remove-outline"></ion-icon></ion-button>
+                  <p>{{count}}</p>
+                  <ion-button (click)="increment()"><ion-icon class="btn-adjust" name="add"></ion-icon></ion-button>
+
+                </div>
+                
+              </div>
+            </ion-label>
+          </ion-item>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+            </ion-avatar>
+            <ion-label class="contLabel">
+              <div class="textProducto">
+                <div class="infoProducto">
+                  <h2>Pintura</h2>
+                  <p>$250</p>
+                </div>
+                <div class="listProducto">
+                  <ion-button (click)="decrement()"> <ion-icon class="btn-adjust"  name="remove-outline"></ion-icon></ion-button>
+                  <p>{{count}}</p>
+                  <ion-button (click)="increment()"><ion-icon class="btn-adjust" name="add"></ion-icon></ion-button>
+                </div>
+              </div>
+            </ion-label>
+          </ion-item>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+            </ion-avatar>
+            <ion-label class="contLabel">
+              <div class="textProducto">
+                <div class="infoProducto">
+                  <h2>Cera gel</h2>
+                  <p>$150</p>
+                </div>
+                <div class="listProducto">
+                  <ion-button (click)="decrement()"> <ion-icon class="btn-adjust"  name="remove-outline"></ion-icon></ion-button>
+                  <p>{{count}}</p>
+                  <ion-button (click)="increment()"><ion-icon class="btn-adjust" name="add"></ion-icon></ion-button>
+                </div>
+              </div>
+            </ion-label>
+          </ion-item>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+            </ion-avatar>
+            <ion-label class="contLabel">
+              <div class="textProducto">
+                <div class="infoProducto">
+                  <h2>Crema para el cabello</h2>
+                  <p>$200</p>
+                </div>
+                <div class="listProducto">
+                  <ion-button (click)="decrement()"> <ion-icon class="btn-adjust"  name="remove-outline"></ion-icon></ion-button>
+                  <p>{{count}}</p>
+                  <ion-button (click)="increment()"><ion-icon class="btn-adjust" name="add"></ion-icon></ion-button>
+
+                </div>
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+        <div class="infoResumen">
+          <span class="textTotal">Total: $ 480</span>
+          <p class="direccion">Dirección del local: No. 18, Emiliano Zapata, Chilapa de 'Álvarez</p>
+          <p class="tiempoEstimado">Tiempo estimado: 1 h</p>
+        </div>
+         
+        <div class="btn-apartar">
+         <ion-button (click)="modal.dismiss()" >Seguir comprando</ion-button>
+         <ion-button (click)="openSecondModal()" >Apartar</ion-button>
+       </div>
+  
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  
+  <!-- MODAL PARA APARTAR -->
+  <ion-modal #secondModal [canDismiss]="canDismiss" [presentingElement]="presentingElement">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title align="center">Otro día</ion-title>
+          <ion-buttons slot="end">
+            <ion-icon name="close-outline" color="light" class="cerrarModal" (click)="closeSecondModal()"></ion-icon>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding" [scrollEvents]="true">
+        <p align=" center">
+          Seleccione una fecha, por favor
+        </p>
+        <div align="center">
+
+          <ion-datetime
+          
+            value="2023-11-02"
+            presentation="date"  
+            [formatOptions]="{
+              date: { day: '2-digit', month: 'long' }
+            }"
+          >
+            <span slot="title" style="color:white">Fecha seleccionada</span>
+          </ion-datetime>
+          <div align="center"> <br>
+            <span>Horas disponibles</span><br><br>
+            <ion-select mode="ios" label="Horas disponibles" label-placement="floating" fill="outline">
+              <ion-select-option value="uno">8:00</ion-select-option>
+              <ion-select-option value="dos">14:00</ion-select-option>
+            </ion-select>
+          </div>
+          <br>
+          <ion-button expand="block">Confirmar</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  
+
+
+  </ion-content>
+
+<app-footer></app-footer>

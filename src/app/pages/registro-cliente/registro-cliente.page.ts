@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, MaxValidator, Validators } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
@@ -20,6 +20,10 @@ export class RegistroClientePage implements OnInit {
 
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("",Validators.required),
+      'ApellidoPaterno': new FormControl("",Validators.required),
+      'ApellidoMaterno': new FormControl("",Validators.required),
+      'correo': new FormControl("",[Validators.required, Validators.email]),
+      'numeroTelefono': new FormControl("",[Validators.required,Validators.maxLength(10)]),
       'password': new FormControl("",Validators.required),
       'confirmarPassword': new FormControl("",Validators.required)
     })
